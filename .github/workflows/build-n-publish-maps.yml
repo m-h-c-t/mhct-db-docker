@@ -1,7 +1,8 @@
-name: "Build n Publish Hunts"
+name: "Build n Publish MapSpotter"
 on:
-  schedule:
-    - cron:  '30 10 * * *'
+  workflow_dispatch:
+  # schedule:
+  #   - cron:  '30 18 * * 3'
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
@@ -26,6 +27,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
+          file: DockerfileMaps
           push: true
-          tags: tsitu/mhct-db-docker:nightly,tsitu/mhct-db-docker:latest
+          tags: tsitu/mhct-db-docker:mapspotter
           labels: ${{ steps.meta.outputs.labels }}
