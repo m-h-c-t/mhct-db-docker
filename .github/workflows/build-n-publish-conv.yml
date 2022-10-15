@@ -26,7 +26,8 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
-          context: DockerfileConv
+          context: .
+          file: DockerfileConv
           push: true
           tags: tsitu/mhct-db-docker:converter
           labels: ${{ steps.meta.outputs.labels }}
