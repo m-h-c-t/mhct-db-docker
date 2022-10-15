@@ -1,4 +1,4 @@
-name: "Build n Publish"
+name: "Build n Publish Hunts"
 on:
   schedule:
     - cron:  '30 10 * * *'
@@ -23,7 +23,7 @@ jobs:
           images: tsitu/mhct-db-docker
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           context: .
           push: true

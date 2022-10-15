@@ -1,4 +1,4 @@
-name: "Build n Publish Converter"
+name: "Build n Publish MapSpotter"
 on:
   workflow_dispatch:
   # schedule:
@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: DockerfileConv
+          file: DockerfileMaps
           push: true
-          tags: tsitu/mhct-db-docker:converter
+          tags: tsitu/mhct-db-docker:mapspotter
           labels: ${{ steps.meta.outputs.labels }}
