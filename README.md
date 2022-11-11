@@ -1,6 +1,6 @@
 # 🐳 MHCT DB Docker &middot; [![Build Status](https://img.shields.io/docker/cloud/build/tsitu/mhct-db-docker.svg)](https://hub.docker.com/r/tsitu/mhct-db-docker/builds)
 
-Docker images aimed at simplifying access to MHCT's various databases. Each image contains a MySQL 5.7 server preloaded with data from MHCT's [Keybase backups](https://keybase.pub/devjacksmith/mh_backups/).
+Docker images aimed at simplifying access to MHCT's various databases. Each image contains a MySQL 8.0 (debian) server preloaded with data from MHCT's [Keybase backups](https://keybase.pub/devjacksmith/mh_backups/).
 
 Based on [Bavo's repo](https://github.com/bavovanachte/jacks-tools-docker).
 
