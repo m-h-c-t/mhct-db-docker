@@ -23,6 +23,15 @@ jobs:
         with:
           images: tsitu/mhct-db-docker
 
+      # https://github.com/orgs/community/discussions/26351
+      - name: Free up some disk space
+        run: |
+          sudo swapoff -a
+          sudo rm -f /swapfile
+          sudo apt clean
+          docker rmi $(docker image ls -aq)
+          df -h
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
