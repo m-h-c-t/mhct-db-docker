@@ -39,3 +39,6 @@ jobs:
           push: true
           tags: tsitu/mhct-db-docker:nightly,tsitu/mhct-db-docker:latest
           labels: ${{ steps.meta.outputs.labels }}
+
+      # Action to keep workflow going before 60 days of repo inactivity
+      - uses: gautamkrishnar/keepalive-workflow@v1
