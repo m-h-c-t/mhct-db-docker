@@ -14,8 +14,8 @@ RUN apt-get update && apt-get install -y curl
 ADD ./_preload.sh /docker-entrypoint-initdb.d/
 
 # COPY db files to /docker-entrypoint-initdb.d/
-RUN echo "[ DB Last Updated ]" && curl https://devjacksmith.keybase.pub/mh_backups/nightly/last_updated.txt?dl=1
-RUN curl https://devjacksmith.keybase.pub/mh_backups/nightly/hunthelper_nightly.sql.gz?dl=1 -o /docker-entrypoint-initdb.d/hunthelper_nightly.sql.gz
+RUN echo "[ DB Last Updated ]" && curl https://backups.mhct.win/nightly/last_updated.txt
+RUN curl https://backups.mhct.win/nightly/hunthelper_nightly.sql.gz -o /docker-entrypoint-initdb.d/hunthelper_nightly.sql.gz
 
 # Need to change the datadir to something else that /var/lib/mysql because the parent docker file defines it as a volume.
 # https://docs.docker.com/engine/reference/builder/#volume :
