@@ -1,0 +1,37 @@
+[mysqld]
+# Memory settings
+innodb_buffer_pool_size=4G
+innodb_log_buffer_size=256M
+
+# Performance settings
+innodb_read_io_threads=64
+innodb_write_io_threads=64
+innodb_io_capacity=5000
+innodb_thread_concurrency=0
+
+# Disable safety features for faster initialization
+innodb_doublewrite=0
+innodb_flush_log_at_trx_commit=0
+sync_binlog=0
+innodb_checksum_algorithm=none
+innodb_flush_method=O_DIRECT
+innodb_flush_neighbors=0
+innodb_file_per_table=1
+
+# Disable redo logging (DANGEROUS: only for initialization)
+innodb_log_files_in_group=2
+innodb_log_file_size=50M
+skip_log_bin=1
+disable_log_bin
+
+# Build-time optimizations
+max_allowed_packet=512M
+net_buffer_length=1M
+bulk_insert_buffer_size=256M
+sort_buffer_size=32M
+join_buffer_size=32M
+read_buffer_size=32M
+
+# Disable non-essential features during import
+performance_schema=OFF
+innodb_stats_on_metadata=0
