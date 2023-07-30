@@ -11,7 +11,7 @@ ENV MYSQL_DATABASE=mhhunthelper
 
 # Setup
 RUN apt-get update && apt-get install -y curl
-ADD ./_preload.sh /docker-entrypoint-initdb.d/
+ADD ./config-file.cnf /etc/mysql/conf.d/
 
 # COPY db files to /docker-entrypoint-initdb.d/
 RUN echo "[ DB Last Updated ]" && curl https://backups.mhct.win/nightly/last_updated.txt
