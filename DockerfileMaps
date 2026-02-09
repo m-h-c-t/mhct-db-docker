@@ -9,6 +9,8 @@ ENV MYSQL_USER=admin
 ENV MYSQL_PASSWORD=admin
 ENV MYSQL_DATABASE=mhmapspotter
 
+ADD ./config-file.cnf /etc/mysql/conf.d/
+
 # COPY db files to /docker-entrypoint-initdb.d/
 RUN echo "[ DB Last Updated ]" && curl https://backups.mhct.win/weekly/last_updated.txt
 RUN curl https://backups.mhct.win/weekly/mapspotter_weekly.sql.gz -o /docker-entrypoint-initdb.d/mapspotter_weekly.sql.gz

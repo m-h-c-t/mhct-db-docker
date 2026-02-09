@@ -10,7 +10,6 @@ ENV MYSQL_PASSWORD=admin
 ENV MYSQL_DATABASE=mhhunthelper
 
 # Setup
-RUN apt-get update && apt-get install -y curl
 ADD ./config-file.cnf /etc/mysql/conf.d/
 
 RUN echo "[ DB Last Updated ]" && curl https://backups.mhct.win/nightly/last_updated.txt
